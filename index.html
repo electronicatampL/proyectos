@@ -101,5 +101,20 @@
 
     <!-- Referencia al archivo JavaScript -->
     <script src="script.js"></script>
+
+    <script>
+        // Simular pantalla de carga
+        window.onload = function() {
+            const loader = document.getElementById('loader');
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 3000); // Duración de la pantalla de carga
+        };
+    </script>
+    
+    <div id="loader">
+        <img src="quaso.jpg" alt="Cargando...">
+    </div>
+
 </body>
 </html>
