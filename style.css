@@ -1,0 +1,160 @@
+/* Variables CSS para colores y tamaños */
+:root {
+    --color-fondo: #f4f4f4;
+    --color-blanco: #ffffff;
+    --color-borde: #e0e0e0;
+    --color-primario: #007bff;
+    --color-hover: #0056b3;
+    --color-texto: #333;
+    --color-texto-secundario: #555;
+    --radio-borde: 8px;
+    --sombra: rgba(0, 0, 0, 0.1);
+    --fuente-base: Arial, sans-serif;
+    --tamano-fuente-base: 14px;
+}
+
+/* Establecemos el fondo y la fuente base global */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--fuente-base);
+    background-color: var(--color-fondo);
+    margin: 0;
+    padding: 0;
+    font-size: var(--tamano-fuente-base);
+    line-height: 1.6;
+}
+
+/* Estilo general para contenedores */
+.container, .project-container {
+    background-color: var(--color-blanco);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    padding: 20px;
+    box-shadow: 0 2px 8px var(--sombra);
+    max-width: 700px;
+    margin: 15px auto;
+    box-sizing: border-box;
+}
+
+/* Títulos dentro de los contenedores */
+h1 {
+    font-size: 20px;
+    color: var(--color-texto);
+    margin-bottom: 10px;
+}
+
+/* Párrafos dentro de los contenedores */
+p {
+    font-size: var(--tamano-fuente-base);
+    color: var(--color-texto-secundario);
+    margin: 10px 0;
+}
+
+/* Estilo de los botones */
+.burbuja {
+    background-color: var(--color-primario);
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 30px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.burbuja:hover {
+    background-color: var(--color-hover);
+}
+
+/* Botón centrado */
+.centrar-boton {
+    text-align: center;
+}
+
+/* Estilo para los enlaces */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Separadores */
+br {
+    margin-bottom: 10px;
+}
+
+/* Ajustar las imágenes para que sean más pequeñas */
+.image-container img {
+    max-width: 80%; /* La imagen no excede el 80% del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Elimina el espacio debajo de la imagen */
+    margin: 0 auto; /* Centra la imagen dentro del contenedor */
+}
+
+/* Estilos para la barra de búsqueda */
+.search-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#searchInput {
+    padding: 10px;
+    width: 80%;
+    max-width: 500px;
+    font-size: 16px;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+#searchInput:focus {
+    border-color: #007bff;
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    /* Reducir padding y tamaño de texto */
+    .container, .project-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+
+    .burbuja {
+        font-size: 12px;
+        padding: 8px 14px;
+    }
+
+    /* Ajustar las imágenes en pantallas pequeñas */
+    .image-container img {
+        max-width: 100%; /* En pantallas más pequeñas, la imagen puede ocupar todo el ancho */
+    }
+
+    /* Ajustar barra de búsqueda en pantallas pequeñas */
+    #searchInput {
+        width: 90%; /* La barra de búsqueda ocupa más espacio en pantallas pequeñas */
+    }
+}
+
+/* Foco para accesibilidad */
+.burbuja:focus {
+    outline: 3px solid var(--color-primario);
+    outline-offset: 2px;
+}
