@@ -14,9 +14,7 @@
 }
 
 /* Establecemos el fondo y la fuente base global */
-*,
-*::before,
-*::after {
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -29,6 +27,7 @@ body {
     padding: 0;
     font-size: var(--tamano-fuente-base);
     line-height: 1.6;
+    animation: fadeIn 0.8s ease-out;
 }
 
 /* Estilo general para contenedores */
@@ -41,6 +40,7 @@ body {
     max-width: 700px;
     margin: 15px auto;
     box-sizing: border-box;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 /* Títulos dentro de los contenedores */
@@ -71,6 +71,7 @@ p {
     display: inline-block;
     text-decoration: none;
     margin-top: 10px;
+    animation: fadeIn 0.8s ease-out;
 }
 
 .burbuja:hover {
@@ -95,10 +96,11 @@ br {
 
 /* Ajustar las imágenes para que sean más pequeñas */
 .image-container img {
-    max-width: 80%; /* La imagen no excede el 80% del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
-    display: block; /* Elimina el espacio debajo de la imagen */
-    margin: 0 auto; /* Centra la imagen dentro del contenedor */
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    animation: fadeIn 0.8s ease-out;
 }
 
 /* Estilos para la barra de búsqueda */
@@ -115,6 +117,7 @@ br {
     border-radius: 30px;
     border: 1px solid #ccc;
     outline: none;
+    animation: fadeIn 0.8s ease-out;
 }
 
 #searchInput:focus {
@@ -123,7 +126,6 @@ br {
 
 /* Diseño responsivo */
 @media (max-width: 768px) {
-    /* Reducir padding y tamaño de texto */
     .container, .project-container {
         width: 90%;
         padding: 15px;
@@ -142,14 +144,12 @@ br {
         padding: 8px 14px;
     }
 
-    /* Ajustar las imágenes en pantallas pequeñas */
     .image-container img {
-        max-width: 100%; /* En pantallas más pequeñas, la imagen puede ocupar todo el ancho */
+        max-width: 100%;
     }
 
-    /* Ajustar barra de búsqueda en pantallas pequeñas */
     #searchInput {
-        width: 90%; /* La barra de búsqueda ocupa más espacio en pantallas pequeñas */
+        width: 90%;
     }
 }
 
@@ -158,13 +158,15 @@ br {
     outline: 3px solid var(--color-primario);
     outline-offset: 2px;
 }
+
+/* Animación de carga */
 #loader {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #fff; /* Fondo blanco */
+    background-color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -173,49 +175,20 @@ br {
 
 #loader img {
     width: 150px;
-    animation: spin 1s linear infinite; /* Cambio de pulse a spin */
+    animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
-    }
-
-    .price-card h2 {
-        font-size: 1.5rem;
-    }
-
-    .buy-button {
-        font-size: 1rem;
-        padding: 10px 20px;
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
