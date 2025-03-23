@@ -198,6 +198,30 @@ h1 {
 
 }
 
-.mac12-o {
-    width: 45%;
+.descubre {
+    text-align: center;
+    border-radius: 12px;
 }
+
+.descubre p {
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #000000 0%, #0a1931 50%, hsl(0, 0%, 46%) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: luz 2.5s linear infinite;
+    font-family: 'Anton', sans-serif;
+}
+
+@keyframes luz {
+    0% {
+        background-position: -100% center;
+    }
+    100% {
+        background-position: 100% center;
+    }
+}
+
+
